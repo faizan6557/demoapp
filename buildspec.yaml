@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies (if any)..."
+  pre_build:
+    commands:
+      - echo "Starting pre-build phase..."
+  build:
+    commands:
+      - echo "Building static HTML project..."
+      - mkdir -p build
+      - cp index.html build/
+  post_build:
+    commands:
+      - echo "Build completed successfully."
+      - echo "Files ready for deployment."
+
+artifacts:
+  files:
+    - build/**/*
+  base-directory: build
